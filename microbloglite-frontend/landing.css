@@ -1,1 +1,248 @@
 /* Landing Page CSS */
+
+:root {
+    --auth-bg-color:#212121;
+    --auth-text-color:#fff;
+   
+    --auth-input-bg:#F5F5F5;
+    --auth-input-text:#000;
+    --auth-input-border:#000;
+
+    --auth-scroll-track:#94949459;
+    --auth-scroll-bg:#fff;
+
+    --auth-theme-bg:#fff;
+    --auth-theme-text:#000;
+
+    --auth-theme-bg-2:#000;
+    --auth-theme-text-2:#fff;
+      
+    --auth-error-bg:#f8d7da;
+    --auth-error-text:#721c24;
+}
+  
+
+.auth_form_content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.auth_form_content::-webkit-scrollbar-track {
+    background-color: var(--auth-scroll-track);
+}
+
+.auth_form_content::-webkit-scrollbar-thumb {
+    background-color: var(--auth-scroll-bg);
+    outline: 1px solid var(--auth-scroll-bg);
+    width: 6px;
+}
+
+
+.auth_form_section {
+    height: 100vh;
+    background: var(--auth-bg-color);
+    overflow: hidden;
+}
+
+.auth_form_content {
+    height: 100vh;
+    overflow-y: auto;
+    padding: 0px 20px;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+
+.auth_logo_box {
+    margin-bottom: 35px;
+    margin-top: 30px;
+}
+
+.auth_logo_box img {
+    max-width: 170px;
+}
+
+.auth_logo_box small {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--auth-text-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.auth_form_heading {
+    margin-bottom: 17px;
+}
+
+.auth_form_heading h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    padding-bottom: 8px;
+    color: var(--auth-text-color);
+}
+
+.auth_form_heading p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    color: var(--auth-text-color);
+    opacity: 0.5;
+
+}
+
+
+
+.auth_field_box {
+    gap: 7px 0px;
+    padding-bottom: 13px;
+}
+
+.auth_field_data {
+    height: 66px;
+    background: var(--auth-input-bg);
+    border: 1px solid var(--auth-input-border);
+    border-radius: 10px;
+}
+
+.auth_field_data i {
+    position: absolute;
+    bottom: 19px;
+    right: 16px;
+    color: var(--auth-input-text);
+    cursor: pointer;
+}
+
+.auth_field_box span {
+    font-size: 11px;
+    font-weight: 200;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    color: var(--auth-input-text);
+    position: absolute;
+    top: 12px;
+    left: 16px;
+}
+
+.auth_field_data input {
+    background: inherit;
+    height: 100%;
+    padding: 32px 38px 14px 16px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    width: 100%;
+    background-color: unset;
+    border: unset;
+    color: var(--auth-input-text);
+    border-radius: inherit;
+}
+
+.auth_field_data input::placeholder {
+    color: var(--auth-input-text);
+    opacity: 0.8;
+}
+
+.auth_field_box label.error {
+    color:var(--auth-error-text);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 11px;
+}
+.error_listing {
+    display: grid;
+    gap: 5px;
+    background-color:var(--auth-error-bg);
+    padding: 10px 9px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+.error_listing .error_list{
+    color:var(--auth-error-text);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.auth_forget_pass_popup a {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--auth-input-text) !important;
+}
+
+.auth_submit_btn {
+    padding-top: 20px;
+}
+
+.auth_submit_btn button {
+    border: unset;
+    background: var(--auth-theme-bg);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    padding: 14px 10px;
+    width: 100%;
+    cursor: pointer;
+    color: var(--auth-theme-text) !important;
+}
+
+
+.auth_have_account_btn {
+    padding-top: 20px;
+}
+
+.auth_have_account_btn p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.61px;
+    color: var(--auth-text-color);
+}
+
+.auth_have_account_btn p a {
+    color: var(--auth-text-color);
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.auth_have_account_btn span {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.61px;
+    color: var(--auth-text-color);
+    padding: 20px 0px;
+}
+
+
+  #alert-container {
+    top: 10px;
+    transform: translatey(-200%);
+    z-index: 1050;
+    transition: 0.5s ease-in-out; 
+    left: 0px;
+}
+#alert-container.show{
+    transition: 0.5s ease-in-out; 
+    transform: translatey(0%);
+}
+.alert-box{
+    max-width: 320px;
+}
+@media(max-width:1024px) {
+    .auth_logo_box img {
+        max-width: 163px;
+    }
+
+    .auth_logo_box small {
+        font-size: 10px;
+        line-height: 19px;
+    }
+
+    .auth_logo_box {
+        margin-bottom: 25px;
+        margin-top: 30px;
+    }
+}

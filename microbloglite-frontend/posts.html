@@ -6,39 +6,198 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css"
+    crossorigin="anonymous" />
 
-    <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="global.css">
+<link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet">
 
-    <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="posts.css">
+<link rel="stylesheet" href="global.css" />
+<link rel="stylesheet" href="posts.css" />
 
-    <title>/POSTS</title>
 
-    <!-- Run BEFORE page is finished loading (before window.onload): -->
-    <script src="auth.js"></script>
-    <script>
-        // If the user is NOT logged in, redirect back to the landing page (index.html)
-        if (isLoggedIn() === false) window.location.replace("/");
-    </script>
+<!--google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+<!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<!-- jQuery JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+<!-- Run BEFORE page is finished loading (before window.onload): -->
+<script src="auth.js"></script>
+
+<script>
+    // If the user is NOT logged in, redirect back to the landing page (index.html)
+    //  if (isLoggedIn() === false) window.location.replace("index.html");
+</script>
 </head>
+
+
 <body>
 
-    <header>
-        <h1>POSTS PAGE</h1>
-    </header>
+<header class="desk_header d-block">
+    <div class="custom_container">
+        <div class="d-flex align-items-center justify-content-between w-100">
+            <a class="header_logo d-flex">
+                <img src="https://digitaldva.com/images/logo.webp" class="object-fit-cover w-100" alt="Logo">
 
-    <main></main>
+            </a>
+            <div class="header_listing d-flex align-items-center">
+             
+                <div class="profile_filter d-flex align-items-center">
+                    <label type="button" id="sort_toggle" data-bs-toggle="dropdown" aria-expanded="false" class="">
+                        <img lazy="loading" src="https://getintotek.com/images/team1.png"> Profile <i
+                            class="fal fa-chevron-down"></i></label>
+                    <div class="filter_dropdown_main dropdown-menu" aria-labelledby="sort_toggle">
+                        <ul class="filter_dropdown d-grid w-100">
+                            <li class="w-100"><a href="profile.html" class="w-100 d-flex align-items-center"><i
+                                class="fal fa-sign-out-alt"></i>
+                            Profile</a></li>
+                            <li class="w-100"><a id="logout_btn" class="w-100 d-flex align-items-center"><i
+                                        class="fal fa-sign-out-alt"></i>
+                                    Logout</a></li>
+                        </ul>
+                    </div>
 
-    <footer></footer>
+                </div>
 
-    <!-- Page-specific code -->
-    <script src="posts.js"></script>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="inner_banner_section d-block w-100">
+    <div class="inner_banner_text_section w-100 h-100 position-relative">
+        <div class="inner_banner_container">
+            <div class="inner_banner_slider_text d-flex flex-column w-100 align-items-center text-center">
+
+                <h2>Blog</h2>
+                <a href="create-post.html">Create Post</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="single_article_parent d-inline-block w-100">
+    <div class="custom_container">
+
+        <div class="single_article_data d-flex flex-column w-100">
+            <div class="blog_listing d-flex align-items-center justify-content-center flex-wrap">
+                <a
+                    class="single_blog_box_main d-flex flex-column">
+                    <div class="single_blog_box_figure d-flex w-100">
+                        <img src="/images/capstonephotos/8.jpg"
+                            alt="Top 10 Must-Visit Spots in South Africa">
+
+                    </div>
+                    <div class="single_blog_box d-flex flex-column w-100 h-100">
+                        <div
+                            class="single_blog_box_des_tags d-flex w-100 align-items-center flex-wrap justify-content-start">
+                            <span>May 16, 2024</span>
+                            <small>0 Comments</small>
+                        </div>
+                        <h3>Top 10 Must-Visit Spots in South Africa</h3>
+                        <p>South Africa, a land rich in natural beauty and cultural diversity, stands ready to
+                            welcome travelers with an array of unforgettable experiences. From sprawling
+                            savannas to cosmopolitan cities, this extraordinary country offers something for
+                            everyone. Ready to explore? Here are the 10 must-visit destinations in South Africa
+                            that you absolutely can't miss!</p>
+                        <strong>Read Post</strong>
+                    </div>
+                </a>
+                <a 
+                    class="single_blog_box_main d-flex flex-column">
+                    <div class="single_blog_box_figure d-flex w-100">
+                        <img src="/images/capstonephotos/10.jpg" />
+
+                    </div>
+                    <div class="single_blog_box d-flex flex-column w-100 h-100">
+                        <div
+                            class="single_blog_box_des_tags d-flex w-100 align-items-center flex-wrap justify-content-start">
+                            <span>May 19, 2024</span>
+                            <small>0 Comments</small>
+                        </div>
+                        <h3>Journey Through the Afar Triangle: 4 Days in Erta’Ale, Dalol &amp; Afedera</h3>
+                        <p>Embark on a mesmerizing adventure through the Afar Triangle with our 4-day itinerary.
+                            As you visit Erta’Ale, Dalol &amp; Afedera, you’ll witness some of the Earth’s most
+                            extraordinary natural wonders. From active lava lakes to vibrantly coloured mineral
+                            deposits, this journey promises breathtaking landscapes and unforgettable
+                            experiences.</p>
+                        <strong>Read Post</strong>
+                    </div>
+                </a>
+                <a 
+                    class="single_blog_box_main d-flex flex-column">
+                    <div class="single_blog_box_figure d-flex w-100">
+                        <img src="/images/capstonephotos/13.jpg" />
+
+                    </div>
+                    <div class="single_blog_box d-flex flex-column w-100 h-100">
+                        <div
+                            class="single_blog_box_des_tags d-flex w-100 align-items-center flex-wrap justify-content-start">
+                            <span>June 29, 2024</span>
+                            <small>0 Comments</small>
+                        </div>
+                        <h3>An Odyssey into Simien Mountains National Park</h3>
+                        <p>Nestled in northern Ethiopia, Simien Mountains National Park, a UNESCO World Heritage
+                            site, boasts magnificent jagged peaks, vast plateaus, and deep valleys, with its
+                            highest point, Ras Dashen, standing at 4,550 meters.</p>
+                        <strong>Read Post</strong>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</div>
+
+
+<footer class="footer_parent d-flex flex-column w-100">
+
+    <section class="footer_section d-inline-block w-100">
+        <div class="custom_container">
+            <div
+                class="footer_header d-flex flex-column w-100 align-items-center justify-content-center text-center">
+                <figure class="m-0"><img class="w-100 h-100 object-fit-cover"
+                        src="https://digitaldva.com/images/logo.webp"></figure>
+                <p></p>
+            </div>
+            <div class="footer_links d-flex w-100 flex-wrap align-items-center justify-content-center">
+                <a href="posts.html">home</a>
+                <a href="profile.html">Profile</a>
+                <a href="create-post.html">Create Post</a>
+          
+                <a href="">Privacy Policy</a>
+
+            </div>
+            <div class="copyright_footer d-flex align-items-center justify-content-center w-100 text-center">
+                <p>Blogging 2024. All rights reserved</p>
+            </div>
+        </div>
+    </section>
+</footer>
+
+
+<!-- Page-specific code -->
+<script src="posts.js"></script>
 </body>
+
 </html>

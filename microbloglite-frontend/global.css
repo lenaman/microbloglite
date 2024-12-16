@@ -1,18 +1,244 @@
-/* Global CSS for all pages */
-
 * {
-    /* Sizing helper: See Workbook 1b, page 2-33. */
+    -web-kit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
-
-    /* 
-       Vizualization helper: While styling or debugging your HTML & CSS, 
-       uncomment the rule below to see all the boxes on your page more
-       clearly! (Remove this outline before submitting: users won't 
-       want to see it!)
-    */
-    /* outline: 1px dotted red; */
-}
-
-:root {
-    font-size: 1rem;
-}
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    touch-action: manipulation;
+    width: 100%;
+    margin: 0px;
+    background-color: #212121 !important;
+  }
+  :root {
+    touch-action: pan-x pan-y;
+  }
+  
+  a {
+    text-decoration: none !important;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  figure,
+  ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .custom_container {
+    max-width: 1548px;
+    margin: 0 auto;
+  }
+  @media(max-width:1500px){
+  .custom_container {
+    max-width: 1100px;
+  }
+  }
+  .focus ,input{
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: unset !important;
+  }
+  button:focus-visible,input:focus-visible {
+    outline: unset !important;
+  }
+  
+  
+  /* header style  */
+  /* for home page only  */
+  .desk_header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 20px;
+    backdrop-filter: blur(4px);
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  }
+  /*  */
+  .header_logo{
+    width: 80px;
+  }
+  
+  /* header profile dropdown css */
+  
+  .profile_filter label {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.64px;
+    color:#fff;
+  }
+  
+  .profile_filter label i {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 17.64px;
+    color:#fff;
+    margin-left: 10px;
+  }
+  
+  .filter_dropdown_main {
+    box-shadow: 0px 7px 24px 0px #000;
+    padding: 20px 14px !important;
+    border: unset !important;
+    width: 212px;
+  }
+  
+  .filter_dropdown {
+    gap: 14px;
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+  
+  .filter_dropdown li a {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.64px;
+    color: #000 !important;
+    cursor: pointer;
+  }
+  
+  .filter_dropdown li a i {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.64px;
+    color: #000;
+    margin-right: 15px;
+  }
+  
+  .profile_filter label img {
+    width: 40px;
+    border-radius: 50%;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  /* mobile menu css */
+  div#mobileMenu {
+    background: #ffffff0d;
+    backdrop-filter: blur(20px);
+    border: 1px solid #ffffff26;
+    width: 100%;
+  }
+  .mobile_menu_header {
+    padding: 40px 20px !important;
+  }
+  .mobile_menu_header button {
+    color: #fff !important;
+    background: transparent;
+    box-shadow: unset !important;
+    border: unset !important;
+    outline: unset !important;
+    font-size: 23px;
+    position: absolute;
+    top: 39px;
+    right: 30px;
+  }
+  
+  
+  @media (max-width: 1500px) {
+    .desk_header {
+      padding: 20px 20px;
+    }
+  
+  
+  
+  }
+  
+  
+  /* footer style */
+  
+  .footer_section {
+    background: rgba(18, 24, 31);
+    padding: 0px 20px;
+  }
+  .footer_header {
+    margin-bottom: 40px;
+    padding-top: 60px;
+  }
+  .footer_header figure {
+    width: 65px;
+    padding-bottom: 20px;
+  }
+  
+  .footer_header p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #ffffff85;
+    max-width: 1080px;
+  }
+  
+  .copyright_footer {
+    border-top: 1px solid #ffffff1f;
+    padding: 20px 0px 20px 0px;
+  }
+  .copyright_footer p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #fff;
+  }
+  .copyright_footer p a{
+    font-size: 14px;
+    line-height: 20px;
+    color: #fff !important;
+  }
+  .footer_links {
+  margin-bottom: 30px;
+  }
+  .footer_links a{
+  margin-bottom: 15px;
+  
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-right: 20px;
+  color: rgba(184, 194, 207, 1) !important;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0px 10px 0px 10px;
+  position: relative;
+  
+  }
+  
+  @media (max-width: 1024px) {
+   
+    .copyright_footer {
+      padding: 15px 0px 15px 0px;
+    }
+  }
+  @media (max-width: 768px) {
+    
+  }
+  @media (max-width: 540px) {
+  
+    .footer_header p {
+      font-size: 14px;
+      line-height: 21px;
+      max-width: 100%;
+    }
+  
+  
+  }
+  
+  .create_post_parnt{
+    padding: 0px 10px;
+    margin-bottom: 40px;
+  }
