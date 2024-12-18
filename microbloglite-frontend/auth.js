@@ -95,35 +95,6 @@ function logout () {
         });
 }
 
-function signup (signupData) {
-    // POST /auth/login
-    const options = { 
-        method: "POST",
-        headers: {
-            // This header specifies the type of content we're sending.
-            // This is required for endpoints expecting us to send
-            // JSON data.
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(signupData),
-    };
-    return fetch(apiBaseURL + "/api/users", options)
-        .then(response => response.json())
-        .then(signupData => {
-            if (signupData.message === "Invalid username or password") {
-                console.error(signupData)
-                // Here is where you might want to add an error notification 
-                // or other visible indicator to the page so that the user is  
-                // informed that they have entered the wrong login info.
-                return null
-            }
-
-            window.localStorage.setItem("login-data", JSON.stringify(signupData));
-            window.location.assign("/index.html");  // redirect
-
-            return signupData;
-        })
-}
 
 const logoutButton = document.querySelector('#logout-btn')
 document.addEventListener('DOMContentLoaded', function(event) {
