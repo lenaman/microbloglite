@@ -42,7 +42,7 @@ signupForm.onsubmit = function (event) {
     // the input element in the form which has the ID of "username".
     const signupData = {
         username: signupForm.username.value,
-        fullname: signupForm.fullname.value,
+        fullName: signupForm.fullname.value,
         password: signupForm.createPassword.value,
     };
         const confirmPassword = signupForm.confirmPassword.value;
