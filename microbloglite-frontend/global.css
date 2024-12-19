@@ -220,10 +220,7 @@ position: relative;
     line-height: 21px;
     max-width: 100%;
   }
-
-
 }
-
 .create_post_parnt{
   padding: 0px 10px;
   margin-bottom: 40px;
@@ -243,3 +240,5 @@ position: relative;
   border-radius: 50%;
   object-fit: cover;
 }
+
+/* PROFILE */
