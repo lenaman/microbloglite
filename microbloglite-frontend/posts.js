@@ -76,7 +76,7 @@ function buildCard(info, currentUser) {
 
   const likeButton = document.createElement("button");
   likeButton.className = "btn btn-sm me-2";
-  likeButton.textContent = "♥ Like";
+  likeButton.textContent = "♥";
   likeButton.style.color = isPostLiked(info.likes, currentUser) ? "red" : "black";
   if (info.likes.length > 0) {
     likeButton.setAttribute("data-like-id", info.likes[0]._id);
@@ -124,7 +124,7 @@ function handleLikeButtonClick(postId, button, currentUser) {
       })
       .then((data) => {
         console.log("Post unliked:", data);
-        button.style.color = "grey"; // Update button color
+        button.style.color = "black"; // Update button color
         button.removeAttribute("data-like-id"); // Remove the likeId from the button
       })
       .catch((error) => console.error("Error unliking post:", error));
