@@ -77,7 +77,7 @@ function buildCard(info, currentUser) {
   const likeButton = document.createElement("button");
   likeButton.className = "btn btn-sm me-2";
   likeButton.textContent = "♥ Like";
-  likeButton.style.color = isPostLiked(info.likes, currentUser) ? "red" : "grey";
+  likeButton.style.color = isPostLiked(info.likes, currentUser) ? "red" : "black";
   if (info.likes.length > 0) {
     likeButton.setAttribute("data-like-id", info.likes[0]._id);
   }
