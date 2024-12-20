@@ -74,7 +74,83 @@ function buildCard(info, currentUser) {
   timestamp.append(timestampText);
   cardBody.append(timestamp);
 
+  const likeButton = document.createElement("button");
+  likeButton.className = "btn btn-sm me-2";
+  likeButton.textContent = "♥ Like";
+  likeButton.style.color = isPostLiked(info.likes, currentUser) ? "red" : "grey";
+  if (info.likes.length > 0) {
+    likeButton.setAttribute("data-like-id", info.likes[0]._id);
+  }
+
+  likeButton.addEventListener("click", () => {
+    handleLikeButtonClick(info._id, likeButton, currentUser);
+  });
+  cardBody.append(likeButton);
+
   row.append(col);
+}
+
+function isPostLiked(likes, currentUser) {
+  return likes.some((like) => like.username === currentUser);
+}
+
+function handleLikeButtonClick(postId, button, currentUser) {
+  const loginData = getLoginData();
+
+  // Check if the post is already liked by the user
+  const isLiked = button.style.color === "red";
+
+  if (isLiked) {
+    // Find the likeId associated with the current user
+    const likeId = button.getAttribute("data-like-id");
+
+    if (!likeId) {
+      console.error("Like ID not found for this post.");
+      return;
+    }
+
+    // Unlike the post using DELETE request
+    fetch(`${apiBaseURL}/api/likes/${likeId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${loginData.token}`,
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to unlike the post.");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Post unliked:", data);
+        button.style.color = "grey"; // Update button color
+        button.removeAttribute("data-like-id"); // Remove the likeId from the button
+      })
+      .catch((error) => console.error("Error unliking post:", error));
+  } else {
+    // Like the post using POST request
+    fetch(`${apiBaseURL}/api/likes`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${loginData.token}`,
+      },
+      body: JSON.stringify({ postId: postId }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to like the post.");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Post liked:", data);
+        button.style.color = "red"; // Update button color
+        button.setAttribute("data-like-id", data._id); // Save the likeId for unliking later
+      })
+      .catch((error) => console.error("Error liking post:", error));
+  }
 }
 
 function formatDate(isoString) {
