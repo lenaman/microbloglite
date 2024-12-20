@@ -25,10 +25,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-    display: block;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    margin: 20px auto;
 }
 
 /* Profile styling */
@@ -51,12 +48,6 @@ body {
 .profile-title {
     font-size: 24px;
     font-weight: bold;
-    margin: 0;
-}
-
-.profile-email {
-    font-size: 14px;
-    color: #666;
     margin: 0;
 }
 
@@ -90,20 +81,3 @@ button {
     cursor: pointer;
 }
 
-.btn-post {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.btn-cancel {
-    background-color: #f44336;
-    color: white;
-}
-
-.account {
-    width: 90%;
-    display: block;
-    flex-direction: column;
-    gap: 15px;
-    margin: 20px;
-}
